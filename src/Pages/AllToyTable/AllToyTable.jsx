@@ -18,7 +18,7 @@ const AllToyTable = ({ toy }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <th>
-                <Link to={`/viewDetails`}><button className="btn btn-ghost btn-xs">details</button></Link>
+                <Link to={`/viewDetails`}><button className="btn btn-primary btn-xs">details</button></Link>
             </th>
         </tr>
     );
