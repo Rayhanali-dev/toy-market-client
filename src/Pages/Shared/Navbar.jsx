@@ -45,9 +45,12 @@ const Navbar = () => {
                         <li tabIndex={0}>
                             <Link to={`/blog`}>Blog</Link>
                         </li>
-                        <li><Link to={`/addToy`}>Add Toy</Link></li>
+                        <li><Link to={`/allToys`}>All Toys</Link></li>
                         {
-                            user && <li><Link to={`/myToy`}>My Toy</Link></li>
+                            user && <>
+                                <li><Link to={`/myToy`}>My Toy</Link></li>
+                                <li><Link to={`/addToy`}>Add Toy</Link></li>
+                            </>
                         }
                     </ul>
                 </div>
