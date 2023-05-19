@@ -11,7 +11,7 @@ const PopularStore = () => {
             <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
                 <div>
                     <div className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
+                        <figure className="px-10 py-10">
                             <img src={popular1} alt="Shoes" className="rounded-xl" />
                         </figure>
 
@@ -20,7 +20,7 @@ const PopularStore = () => {
                 </div>
                 <div>
                     <div className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
+                        <figure className="px-10 py-10">
                             <img src={popular2} alt="Shoes" className="rounded-xl" />
                         </figure>
                     </div>
@@ -28,7 +28,7 @@ const PopularStore = () => {
                 </div>
                 <div>
                     <div className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
+                        <figure className="px-10 py-10">
                             <img src={popular3} alt="Shoes" className="rounded-xl" />
                         </figure>
                     </div>
@@ -36,7 +36,7 @@ const PopularStore = () => {
                 </div>
                 <div>
                     <div className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
+                        <figure className="px-10 py-10">
                             <img src={popular4} alt="Shoes" className="rounded-xl" />
                         </figure>
                     </div>
