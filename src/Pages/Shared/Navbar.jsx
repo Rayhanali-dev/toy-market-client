@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
+import logo from '../../assets/favicon.jpeg'
 
 const Navbar = () => {
 
@@ -18,11 +19,11 @@ const Navbar = () => {
         <div>
             <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
-                    <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                    <div className="dropdown absolute right-0">
+                        <label tabIndex={0} className="btn mt-3 btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu right-0 menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link>Home</Link></li>
                             <li tabIndex={0}>
                                 <Link to={`/blog`}>Blog</Link>
@@ -46,7 +47,7 @@ const Navbar = () => {
                             </div>
                         </ul>
                     </div>
-                    <Link to={`/`} className="btn btn-ghost normal-case text-xl">Toy Zone</Link>
+                    <Link to={`/`} className="btn btn-ghost flex gap-4 normal-case text-xl"><img className='w-10 h-10' src={logo} alt="" /> Toy Zone</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

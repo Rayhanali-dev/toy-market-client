@@ -7,7 +7,7 @@ import popular4 from '../../../../src/assets/toy4.jpg';
 const PopularStore = () => {
     return (
         <div className='max-w-7xl mx-auto mb-10'>
-            <h3 className='text-5xl text-center my-16'>Popular in Store</h3>
+            <h3 className='text-2xl lg:text-5xl text-center my-16'>Popular in Store</h3>
             <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
                 <div>
                     <div className="card bg-base-100 shadow-xl">

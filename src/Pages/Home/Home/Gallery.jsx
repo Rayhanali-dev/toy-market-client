@@ -10,7 +10,7 @@ import gallery8 from '../../../assets/gallery8.jpeg';
 const Gallery = () => {
     return (
         <div className='max-w-7xl mx-auto mb-10'>
-            <h3 className='text-5xl text-center my-16'>Gallery</h3>
+            <h3 className='lg:text-5xl text-2xl text-center my-16'>Gallery</h3>
             <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
                 <div>
                     <div className="card bg-base-100 shadow-xl">

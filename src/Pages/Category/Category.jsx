@@ -12,12 +12,9 @@ const Category = () => {
             .then(data => setCategoryToys(data))
     }, [category])
 
-    console.log(categoryToys);
-
-
     return (
         <div className='max-w-7xl mx-auto'>
-            <h3 className='text-5xl text-center my-16'>Shop By Category</h3>
+            <h3 className='text-2xl lg:text-5xl text-center my-16'>Shop By Category</h3>
             <div className='text-center mx-auto'>
                 <ul className='flex gap-6 items-center justify-center'>
                     <li><button className={`btn ${category == 'sport car' ? "btn-primary" : "btn-ghost"}`} onClick={() => setCategory('sport car')}>sport car</button></li>
