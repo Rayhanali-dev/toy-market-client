@@ -4,6 +4,7 @@ import PopularStore from './PopularStore';
 import Gallery from './Gallery';
 import Category from '../../Category/Category';
 import title from '../../../Title/Title';
+import Sponser from '../../Sponser/Sponser';
 
 const Home = () => {
     title('Toy Zone || Home')
@@ -13,6 +14,7 @@ const Home = () => {
             <PopularStore></PopularStore>
             <Category></Category>
             <Gallery></Gallery>
+            <Sponser></Sponser>
         </div>
     );
 };
