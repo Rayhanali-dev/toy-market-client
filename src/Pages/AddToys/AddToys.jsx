@@ -8,14 +8,14 @@ const AddToys = () => {
         const form = event.target;
         const name = form.name.value;
         const sellerName = form.sellerName.value;
-        const sellerEmail = form.sellerEmail.value;
+        const sellerEmail = user?.email;
         const toyCategory = form.toyCategory.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const ratings = form.ratings.value;
         const description = form.description.value;
         const photo = form.photourl.value;
-        console.log(name, sellerName, sellerEmail, toyCategory, price, quantity, ratings, description);
+        console.log(name, sellerName, email, toyCategory, price, quantity, ratings, description);
         form.reset();
         const addToys = {
             name, 

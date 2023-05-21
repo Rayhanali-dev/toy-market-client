@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AllToyTable = ({ toy }) => {
     console.log(toy);
-    const { sellerName, name, toyCategory, price, quantity, } = toy;
+    const { sellerName, name, toyCategory, price, quantity, _id } = toy;
     return (
         <tr>
             <th>
@@ -15,10 +15,10 @@ const AllToyTable = ({ toy }) => {
             <td>
                 {toyCategory}
             </td>
-            <td>{price}</td>
+            <td>${price}</td>
             <td>{quantity}</td>
             <th>
-                <Link to={`/viewDetails`}><button className="btn btn-primary btn-xs">details</button></Link>
+                <Link to={`/viewDetails/${_id}`}><button className="btn btn-primary btn-xs">details</button></Link>
             </th>
         </tr>
     );

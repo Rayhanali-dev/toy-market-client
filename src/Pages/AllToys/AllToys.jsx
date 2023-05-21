@@ -5,8 +5,7 @@ import AllToyTable from '../AllToyTable/AllToyTable';
 const AllToys = () => {
     const alltoys = useLoaderData();
     return (
-        <div className="overflow-x-auto w-full max-w-7xl mx-auto">
-            <h3>TOY LENGTH: {alltoys.length}</h3>
+        <div className="overflow-x-auto w-full max-w-7xl py-8 mx-auto">
             <table className="table w-full">
                 {/* head */}
                 <thead>
