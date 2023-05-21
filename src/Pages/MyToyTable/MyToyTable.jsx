@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
 const MyToyTable = ({ mytoy, setMyToys, myToys }) => {
     const { sellerName, name, toyCategory, price, quantity, photo, _id } = mytoy;
 
@@ -8,14 +8,29 @@ const MyToyTable = ({ mytoy, setMyToys, myToys }) => {
         fetch(`http://localhost:5000/myToy/${id}`, {
             method: "DELETE"
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.deletedCount > 0) {
-                const remaining = myToys.filter(toys => toys._id !== _id)
-                setMyToys(remaining);
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        const remaining = myToys.filter(toys => toys._id !== _id)
+                        setMyToys(remaining);
+                    }
+                })
+            })
     }
 
     return (
@@ -38,7 +53,7 @@ const MyToyTable = ({ mytoy, setMyToys, myToys }) => {
             <td>
                 {toyCategory}
             </td>
-            <td>{price}</td>
+            <td>${price}</td>
             <td>{quantity}</td>
             <th>
                 <Link to={`/update/${_id}`}><button className="btn btn-primary btn-xs">Update</button></Link>

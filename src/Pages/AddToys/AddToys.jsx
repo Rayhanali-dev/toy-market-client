@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import title from '../../Title/Title';
+import Swal from 'sweetalert2'
 
 const AddToys = () => {
     title('Toy Zone || Add Toys')
@@ -12,12 +13,11 @@ const AddToys = () => {
         const sellerName = form.sellerName.value;
         const sellerEmail = user?.email;
         const toyCategory = form.toyCategory.value;
-        const price = form.price.value;
+        const price = parseFloat(form.price.value);
         const quantity = form.quantity.value;
         const ratings = form.ratings.value;
         const description = form.description.value;
         const photo = form.photourl.value;
-        console.log(name, sellerName, sellerEmail, toyCategory, price, quantity, ratings, description);
         form.reset();
         const addToys = {
             name, 
@@ -40,6 +40,13 @@ const AddToys = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.insertedId) {
+                Swal.fire(
+                    'Added!',
+                    'Toy Added Successfully',
+                    'success'
+                )
+            }
         })
     }
 
@@ -53,25 +60,25 @@ const AddToys = () => {
                                 <label className="label">
                                     <span className="label-text">Toy Name</span>
                                 </label>
-                                <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                                <input type="text" name='name' required placeholder="Name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Seller Name</span>
                                 </label>
-                                <input type="text" defaultValue={user?.displayName} name='sellerName' placeholder="Seller Name" className="input input-bordered" />
+                                <input type="text" readOnly defaultValue={user?.displayName} name='sellerName' placeholder="Seller Name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo url</span>
                                 </label>
-                                <input type="text" name='photourl' placeholder="photo url" className="input input-bordered" />
+                                <input type="text" required name='photourl' placeholder="photo url" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Seller Email</span>
                                 </label>
-                                <input type="text" name='sellerEmail' defaultValue={user?.email} placeholder="Seller Email" className="input input-bordered" />
+                                <input type="text" readOnly name='sellerEmail' defaultValue={user?.email} placeholder="Seller Email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -87,25 +94,25 @@ const AddToys = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" name='price' placeholder="Price" className="input input-bordered" />
+                                <input type="text" required name='price' placeholder="Price" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Ratings</span>
                                 </label>
-                                <input type="text" name='ratings' placeholder="Ratings" className="input input-bordered" />
+                                <input type="text" required name='ratings' placeholder="Ratings" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Available Quantity</span>
                                 </label>
-                                <input type="text" name='quantity' placeholder="Available Quantity" className="input input-bordered" />
+                                <input type="text" required name='quantity' placeholder="Available Quantity" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Details Description</span>
                                 </label>
-                                <input type="text" name='description' placeholder="Description" className="input input-bordered" />
+                                <input type="text" required name='description' placeholder="Description" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Add Toys</button>

@@ -7,16 +7,23 @@ const MyToys = () => {
     title('Toy Zone || My Toys')
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
-    const url = `http://localhost:5000/myToys?email=${user?.email}`;
+    const [priceSort, setPriceSort] = useState('ascending');
+
     useEffect(() => {
-        fetch(url)
+        fetch(`http://localhost:5000/myToys?email=${user?.email}&&priceSort=${priceSort}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [url])
+    }, [user, priceSort])
+
+
 
     return (
         <div className='max-w-7xl mx-auto'>
             <h3 className='text-4xl text-center my-10'>My Toy: {myToys.length}</h3>
+            <div className='my-10 flex gap-6'>
+                <button onClick={() => setPriceSort('ascending')} className='btn btn-primary'>Ascending</button>
+                <button onClick={() => setPriceSort('descending')} className='btn btn-primary'>Descending</button>
+            </div>
             <div>
                 <table className="table w-full">
                     {/* head */}

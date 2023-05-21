@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const UpdatedToy = () => {
     const update = useLoaderData();
@@ -8,7 +9,7 @@ const UpdatedToy = () => {
         event.preventDefault();
         const form = event.target;
         const quantity = form.quantity.value;
-        const price = form.price.value;
+        const price = parseFloat(form.price.value);
         const description = form.description.value;
         const updatedData = {
             quantity,
@@ -24,7 +25,13 @@ const UpdatedToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data.modifiedCount > 0) {
+                Swal.fire(
+                    'Updated',
+                    'Updated Successfully',
+                    'success'
+                )
+            }
         })
     }
 
@@ -44,13 +51,13 @@ const UpdatedToy = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" name='price' placeholder="password" className="input input-bordered" />
+                                <input type="text" name='price' placeholder="Price" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Description</span>
                                 </label>
-                                <input type="text" name='description' placeholder="password" className="input input-bordered" />
+                                <input type="text" name='description' placeholder="Description" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" className='btn btn-primary' value="Update" />
