@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
+import title from '../../Title/Title';
 
 
 const Login = () => {
@@ -9,6 +10,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
+    title('Toy Zone || Login')
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;

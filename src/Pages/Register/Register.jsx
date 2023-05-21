@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import title from '../../Title/Title';
 
 const Register = () => {
+    title('Toy Zone || Register')
     const { createUser, userUpdateProfile, loggedOut } = useContext(AuthContext);
     const [error, setError] = useState('')
     const handleRegister = (event) => {

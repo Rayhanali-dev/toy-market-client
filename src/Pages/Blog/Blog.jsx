@@ -1,6 +1,8 @@
 import React from 'react';
+import title from '../../Title/Title';
 
 const Blog = () => {
+    title('Toy Zone || Blog')
     return (
         <div className='bg-slate-300 py-14'>
             <div className='max-w-7xl mx-auto'>

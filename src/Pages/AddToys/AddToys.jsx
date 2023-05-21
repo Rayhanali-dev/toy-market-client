@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import title from '../../Title/Title';
 
 const AddToys = () => {
+    title('Toy Zone || Add Toys')
     const {user} = useContext(AuthContext);
     const handleAddToy = (event) => {
         event.preventDefault();
