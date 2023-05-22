@@ -8,7 +8,7 @@ const Sponser = () => {
     return (
         <div className='max-w-7xl mx-auto'>
             <h3 className='lg:text-5xl text-2xl text-center my-16'>We work with the best brands</h3>
-            <div className='grid mb-16 grid-cols-2 lg:grid-cols-4'>
+            <div className='grid mb-16 grid-cols-2 gap-6 lg:grid-cols-4'>
                 <div className='mx-auto'>
                     <img src={sponser1} alt="" />
                 </div>
