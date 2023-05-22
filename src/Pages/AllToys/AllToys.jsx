@@ -20,8 +20,8 @@ const AllToys = () => {
 
     return (
         <div className="overflow-x-auto w-full max-w-7xl py-8 mx-auto">
-            <div className='text-center mt-8'>
-                <input onChange={(e) => setSearch(e.target.value)} type="text" className='p-1 border' />
+            <div className='flex items-center gap-6 mb-6 justify-center mt-8'>
+                <input onChange={(e) => setSearch(e.target.value)} placeholder='search by toy name' type="text" className='px-2 py-2 border w-1/2' />
                 <button className='btn btn-secondary' onClick={handleSearchBtn}>Search</button>
             </div>
             <table className="table w-full">
