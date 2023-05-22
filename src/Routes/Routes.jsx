@@ -29,12 +29,12 @@ const router = createBrowserRouter([
         {
           path: '/viewDetails/:id',
           element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/single-toy-details/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-market-server-rayhanali-dev.vercel.app/single-toy-details/${params.id}`)
         },
         {
           path: '/allToys',
           element: <AllToys></AllToys>,
-          loader: () => fetch('http://localhost:5000/toys')
+          loader: () => fetch('https://toy-market-server-rayhanali-dev.vercel.app/toys')
         },
         {
           path: '/register',
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         {
           path: '/update/:id',
           element: <PrivateRoutes><UpdatedToy></UpdatedToy></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/single-toy-details/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-market-server-rayhanali-dev.vercel.app/single-toy-details/${params.id}`)
         },
         {
           path: '/login',

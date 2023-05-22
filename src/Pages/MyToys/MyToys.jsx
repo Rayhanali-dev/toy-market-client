@@ -10,7 +10,7 @@ const MyToys = () => {
     const [priceSort, setPriceSort] = useState('ascending');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys?email=${user?.email}&&priceSort=${priceSort}`)
+        fetch(`https://toy-market-server-rayhanali-dev.vercel.app/myToys?email=${user?.email}&&priceSort=${priceSort}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [user, priceSort])

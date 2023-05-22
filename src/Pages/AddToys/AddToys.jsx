@@ -30,7 +30,7 @@ const AddToys = () => {
             description,
             photo
         }
-        fetch('http://localhost:5000/toys', {
+        fetch('https://toy-market-server-rayhanali-dev.vercel.app/toys', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

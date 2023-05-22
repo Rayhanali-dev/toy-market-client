@@ -5,7 +5,7 @@ const MyToyTable = ({ mytoy, setMyToys, myToys }) => {
     const { sellerName, name, toyCategory, price, quantity, photo, _id } = mytoy;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/myToy/${id}`, {
+        fetch(`https://toy-market-server-rayhanali-dev.vercel.app/myToy/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

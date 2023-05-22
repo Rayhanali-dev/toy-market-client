@@ -10,7 +10,7 @@ const AllToys = () => {
     const [search, setSearch] = useState('');
 
     const handleSearchBtn = () => {
-        fetch(`http://localhost:5000/toys/${search}`)
+        fetch(`https://toy-market-server-rayhanali-dev.vercel.app/toys/${search}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
